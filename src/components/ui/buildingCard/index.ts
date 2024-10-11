@@ -1,0 +1,1 @@
+export { default as BuildingCard } from '../../BuildingCard.vue'

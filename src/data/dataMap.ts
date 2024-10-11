@@ -33,25 +33,25 @@ let townHallHealth: number[] = [0, 450, 1600, 1850, 2100, 2400, 2800, 3300, 3900
 let clanCastleHealth: number[] = [0, 1000, 1400, 2000, 2600, 3000, 3400, 4000, 4400, 4800, 5200, 5400, 5600]
 
 let buildingNameMap: Map<string, number[]> = new Map([
-    ["cannon", cannonHealth],
-    ["archerTower", archerTowerHealth],
-    ["mortar", mortarHealth],
-    ["airDefense", airDefenseHealth],
-    ["wizardTower", wizardTowerHealth],
-    ["airSweeper", airSweeperHealth],
-    ["hiddenTesla", hiddenTeslaHealth],
-    ["bombTower", bombTowerHealth],
-    ["xBow", xBowHealth],
-    ["infernoTower", infernoTowerHealth],
-    ["eagleArtillery", eagleArtilleryHealth],
-    ["scattershot", scattershotHealth],
-    ["builderHut", builderHutHealth],
-    ["spellTower", spellTowerHealth],
-    ["monolith", monolithHealth],
-    ["multiArcherTower", multiArcherTowerHealth],
-    ["ricochetCannon", ricochetCannonHealth],
-    ["townHall", townHallHealth],
-    ["clanCastle", clanCastleHealth],
+    ["Cannon", cannonHealth],
+    ["Archer Tower", archerTowerHealth],
+    ["Mortar", mortarHealth],
+    ["Air Defense", airDefenseHealth],
+    ["Wizard Tower", wizardTowerHealth],
+    ["Air Sweeper", airSweeperHealth],
+    ["Hidden Tesla", hiddenTeslaHealth],
+    ["Bomb Tower", bombTowerHealth],
+    ["X-Bow", xBowHealth],
+    ["Inferno Tower", infernoTowerHealth],
+    ["Eagle Artillery", eagleArtilleryHealth],
+    ["Scattershot", scattershotHealth],
+    ["Builder Hut", builderHutHealth],
+    ["SpellTower", spellTowerHealth],
+    ["Monolith", monolithHealth],
+    ["Multi-Archer Tower", multiArcherTowerHealth],
+    ["Ricochet Cannon", ricochetCannonHealth],
+    ["Town Hall", townHallHealth],
+    ["Clan Castle", clanCastleHealth],
 ]);
 
 // Spell & Equipment Damage Getters
@@ -78,4 +78,16 @@ export function getBuildingHealth(name: string, level: number): number | undefin
         return undefined
     }
 	return buildingArray[level]
+}
+
+export function getBuildingMapKeys(): string[] {
+    return Array.from(buildingNameMap.keys())
+}
+
+export function getBuildingMaxLevel(name: string): number {
+    let length = buildingNameMap.get(name)?.length
+    if(length != undefined) {
+        return length - 1
+    }
+    return 0
 }
