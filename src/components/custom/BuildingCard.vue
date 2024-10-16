@@ -20,13 +20,13 @@
 </script>
 
 <template>
-    <Card class="w-[250px]">
+    <Card class="w-[270px]">
         <CardHeader>
             <CardTitle>{{ props.buildingName }}</CardTitle>
             <CardDescription>{{ buildingHealth }}</CardDescription>
         </CardHeader>
-        <CardContent>
-            <NumberField v-model.number="buildingLevel" :max="buildingMaxLvl" :min="1">
+        <CardContent class="flex justify-center">
+            <NumberField v-model.number="buildingLevel" :max="buildingMaxLvl" :min="1" class="w-36">
                 <NumberFieldContent>
                     <NumberFieldDecrement />
                     <NumberFieldInput />

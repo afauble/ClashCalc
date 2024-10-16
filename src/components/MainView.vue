@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Tabs, TabsList, TabsContent, TabsTrigger } from '@/components/ui/tabs'
 import { Button } from '@/components/ui/button';
-import EquipQuakeTab from '@/components/EquipQuakeTab.vue';
+import EquipQuakeTab from '@/components/pages/EquipQuakeTab.vue';
 </script>
 
 <template>

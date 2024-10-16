@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { getBuildingMapKeys } from '@/data/dataMap';
-    import BuildingCard from '@/components/BuildingCard.vue';
+    import BuildingCard from '@/components/custom/BuildingCard.vue';
     import { ScrollArea } from '@/components/ui/scroll-area';
     import { Separator } from '@/components/ui/separator';
 
@@ -16,7 +16,7 @@
             <!-- Added to create padding on the top -->
             <div class="h-6"></div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+            <div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
                 <BuildingCard v-for="(buidlingName, index) in buildingNames" :key=index :buildingName=buidlingName></BuildingCard>
             </div>
 

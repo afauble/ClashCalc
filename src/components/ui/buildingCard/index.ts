@@ -1,1 +1,1 @@
-export { default as BuildingCard } from '../../BuildingCard.vue'
+export { default as BuildingCard } from '../../custom/BuildingCard.vue'
