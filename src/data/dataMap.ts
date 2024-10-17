@@ -1,5 +1,5 @@
 // // Spells
-let lightingDmg: number[] = [0, 150, 180, 210, 240, 270, 320, 400, 480, 560, 600, 640];
+let lightningDmg: number[] = [0, 150, 180, 210, 240, 270, 320, 400, 480, 560, 600, 640];
 let earthquakeDmg: number[] = [0, 14.5, 17, 21, 25, 29];
 
 // Equipment
@@ -7,8 +7,10 @@ let giantarrowDmg: number[] = [0, 750, 750, 850, 850, 850, 1000, 1000, 1000, 120
 let fireballDmg: number[] = [0, 1500, 1500, 1700, 1700, 1800, 1950, 1950, 2050, 2200, 2200, 2350, 2650, 2650, 2750, 3100, 3100, 3250, 3400, 3400, 3500, 3650, 3650, 3750, 3900, 3900, 3950, 4100];
 
 let equipmentNameMap: Map<string, number[]> = new Map([
-    ["giantarrow", giantarrowDmg],
-    ["fireball", fireballDmg],
+    ["Giant Arrow", giantarrowDmg],
+    ["Fireball", fireballDmg],
+    ["Lightning", lightningDmg],
+    ["Earthquake", earthquakeDmg]
 ]);
 
 // // Buildings
@@ -56,7 +58,7 @@ let buildingNameMap: Map<string, number[]> = new Map([
 
 // Spell & Equipment Damage Getters
 export function getLightingDmg(level: number): number {
-	return lightingDmg[level]
+	return lightningDmg[level]
 }
 export function getEarthquakeDmg(level: number): number {
 	return earthquakeDmg[level]
@@ -86,6 +88,14 @@ export function getBuildingMapKeys(): string[] {
 
 export function getBuildingMaxLevel(name: string): number {
     let length = buildingNameMap.get(name)?.length
+    if(length != undefined) {
+        return length - 1
+    }
+    return 0
+}
+
+export function getEquipmentMaxLevel(name: string): number {
+    let length = equipmentNameMap.get(name)?.length
     if(length != undefined) {
         return length - 1
     }

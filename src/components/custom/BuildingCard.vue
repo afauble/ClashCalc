@@ -20,7 +20,7 @@
 </script>
 
 <template>
-    <Card class="w-[270px]">
+    <Card class="w-[290px]">
         <CardHeader>
             <CardTitle>{{ props.buildingName }}</CardTitle>
             <CardDescription>{{ buildingHealth }}</CardDescription>
